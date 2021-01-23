@@ -1,0 +1,23 @@
+const assert = require("assert");
+
+const { forEach, map } = require("./index");
+
+// function test(desc, fn) {
+//   console.log("---", desc);
+//   try {
+//     fn();
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+it("The forEach function", () => {
+  let sum = 0;
+  forEach([1, 2, 3], (val) => (sum += val));
+  assert.strictEqual(sum, 6);
+});
+
+it("The map function", () => {
+  const result = map([1, 2, 3], (value) => value * 2);
+  assert.deepStrictEqual(result, [2, 4, 6]);
+});
